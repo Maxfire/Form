@@ -1,0 +1,140 @@
+@use 'base/vars' as v;
+@use 'base/mixins' as m;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: v.$white;
+    padding: 1rem 9%;
+    box-shadow: 0 .5rem 1rem v.$shadow;
+
+    .logo img {
+        width: 80px;
+        padding-right: .5rem;
+        @include m.maxtablet {
+            width: 80px;
+        }
+    }
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        gap: 3rem;
+        @include m.maxdesktop {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+
+    &.active {
+        flex-wrap: wrap;
+        transition: all .2s linear;
+    }
+
+    &.active ul {
+        padding: 3rem 0;
+        display: flex;
+    }
+}
+
+ul li a {
+    display: inline-block;
+    font-size: 1.8rem;
+    color: v.$gray;
+    @include m.maxtablet {
+        padding: 10px;
+    }
+    &:hover {
+        color: v.$red;
+    }
+}
+/* gemeric button */
+
+.btn {
+    font-weight: 600;
+    padding: 1.5rem 3.5rem;
+    background: v.$red;
+    color: v.$white;
+    border-radius: 25rem;
+    border: 2px solid transparent;
+    &:hover {
+        background: transparent;
+        border: 2px solid v.$red;
+    }
+}
+
+/* hamburger button */
+.menu-btn {
+    position: relative;
+    display: none;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    @include m.maxdesktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* border: 3px solid #fff; */
+}
+
+.menu-btn__burger {
+    width: 50px;
+    height: 6px;
+    background: v.$black;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px v.$shadow;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: v.$black;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px v.$shadow;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-16px);
+}
+
+.menu-btn__burger::after {
+    transform: translateY(16px);
+}
+
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}

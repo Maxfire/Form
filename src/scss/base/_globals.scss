@@ -1,0 +1,100 @@
+@use 'base/vars' as v;
+@use 'base/mixins' as m;
+
+/* ========= Google font ========= */ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=outfit');
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    @include m.desktop {
+        html {
+            font-size: 55%;
+        }
+    }
+    
+    @include m.phone {
+        html {
+            font-size: 50%;
+        }
+    }
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+*{
+    font-family: v.$main_font;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+*::selection {
+    background: v.$red;
+    color: v.$white;
+}
+
+body {
+    background: v.$lightgray;
+    color: v.$gray;
+    font-size: 1.6rem;
+    
+    &.bodyLock{
+        overflow: hidden;
+    }
+}
+
+section {
+    padding: 2rem 9%;
+    @include m.maxdesktop {
+        padding: 2rem;
+    }
+}
+
+.container {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    margin: 0 0 5rem 0;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.6rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+li {
+    list-style-type: none;
+}

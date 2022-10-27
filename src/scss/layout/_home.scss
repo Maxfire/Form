@@ -1,0 +1,62 @@
+@use 'base/vars' as v;
+@use 'base/mixins' as m;
+
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    min-height: 100vh;
+    align-items: center;
+    background: url(/build/img/home-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .content {
+        flex:1 1 40rem;
+        padding-top: 6.5rem;
+
+        h3 {
+            font-size: 7rem;
+            margin-bottom: 2rem;
+            color: v.$gray;
+            
+            span {
+                color: v.$red;
+            }
+        }
+
+        p {
+            font-size: 2rem;
+            color: v.$mediumgray;
+            padding: 1rem 0;
+            margin-bottom: 4rem;
+            line-height: 2.5rem;
+        }
+
+        .btn {
+            margin-top: 3rem;
+            &:hover {
+                color: v.$red;
+            }
+        }
+    }
+
+    .image {
+        flex:1 1 40rem;
+
+        img {
+            width: 100%;
+            padding: 1rem;
+            animation: float 3s linear infinite;
+        }
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0rem);
+    }
+    50% {
+        transform: translateY(1rem);
+    }
+}

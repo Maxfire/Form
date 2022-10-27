@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  Google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!--  Css  -->
+    <link rel="stylesheet" href="../css/app.css">
+    <title>Juanito's Kitchen</title>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div id="navbar" class="navbar">
+            <a class="logo" href="../../index.html"><img src="../../build/img/svg/JuanitosKitchen_logo.svg"
+                    alt="Juanito's Kitchen logo"></a>
+            <div class="menu-btn" id="menu-btn">
+                <div class="menu-btn__burger"></div>
+            </div>
+            <ul class="navlinks">
+                <li><a href="#about-us">About us</a></li>
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="./reservation-form.html">Reserve</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact-us">Contact us</a></li>
+                <li><a class="login-btn btn" href="sign-up.html">login</a></li>
+            </ul>
+    </header>
+    <section class="reservation_general_container">
+        <div class="reservationForm_mainbox">
+            <h1>Reserva</h1>
+            <div class="title_of_mainbox">
+                <h4>Rellene los datos a continuación para formalizar su reserva</h4>
+            </div>
+
+            <div class="content_of_mainbox">
+                <form name="bookingForm" action="../../index.html" onsubmit="return validateForm()" method="get">
+
+                    <p>Indique a nombre de quien irá la reserva</p>
+                    <input class="reservationTextBox" type="text" name="userName" id="userName">
+
+                    <p>Indique el DNI del socio registrado</p>
+                    <input class="reservationTextBox" type="text" name="dni" id="dni">
+
+                    <p>Número de comensales (Para grupos mayores, llamar al local)</p>
+                    
+                    <div class="input_radio_button">
+                        <input type="radio" id="1" name="numberCustomers" value=1>
+                        <label for="1">1</label>
+                        <input type="radio" id="2" name="numberCustomers" value=2>
+                        <label for="2">2</label>
+                        <input type="radio" id="3" name="numberCustomers" value=3>
+                        <label for="3">3</label>
+                        <input type="radio" id="4" name="numberCustomers" value=4>
+                        <label for="4">4</label>
+                        <input type="radio" id="5" name="numberCustomers" value=5>
+                        <label for="5">5</label>
+                        <input type="radio" id="6" name="numberCustomers" value=6>
+                        <label for="6">6</label>
+                        <input type="radio" id="7" name="numberCustomers" value=7>
+                        <label for="7">7</label>
+                        <input type="radio" id="8" name="numberCustomers" value=8>
+                        <label for="8">8</label>
+                    </div>
+
+                    <p>Seleccione el día y la hora de la reserva</p>
+
+                    <div class="input_date_reservation_box">
+                        <input  type="datetime-local" name="bookingTime" id="bookingTime">
+                    </div>
+
+                    <input class="reservationButton" type="submit" value="Reservar">
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+<script src="../js/reservations-check.js"></script>
+
+</html>
